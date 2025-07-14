@@ -11,7 +11,7 @@ profile: 'default'
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
-model-paths: ["jaffle_shop"]
+model-paths: ["models"]
 analysis-paths: ["analyses"]
 test-paths: ["tests"]
 seed-paths: ["seeds"]
@@ -36,7 +36,5 @@ clean-targets:         # directories to be removed by `dbt clean`
  
 models:
   jaffle_shop:
-    # Applies to all files under models/example/
-    jaffle_shop:
-      +materialized: table
-      +schema: or_STG_DBT
+    +materialized: table
+    +schema: or_STG_DBT
